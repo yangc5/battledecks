@@ -4,13 +4,27 @@
       <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
     </a>
     <ul class="dropdown-menu dropdown-user">
-      <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
-      </li>
-      <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
-      </li>
-      <li class="divider"></li>
-      <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
-      </li>
+      <% if user_signed_in? %>
+        <li>
+          <%= link_to edit_user_password_path do %>
+            <i class="fa fa-user fa-fw"></i> Settings
+          <% end %>
+        </li>
+        <li class="divider"></li>
+        <li>
+          <%= link_to destroy_user_session_path, :method => :delete do %>
+            <i class="fa fa-sign-out fa-fw"></i> Logout
+          <% end %>
+        </li>
+      <% else %>
+        <%= link_to new_user_registration_path do %>
+          <i class="fa fa-user fa-fw"></i> Register
+        <% end %>
+        <li class="divider"></li>
+        <%= link_to new_user_session_path do %>
+          <i class="fa fa-user fa-fw"></i> Sign In
+        <% end %>
+      <% end %>
     </ul>
   </li>
 </ul>
