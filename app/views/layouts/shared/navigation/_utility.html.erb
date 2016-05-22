@@ -7,7 +7,7 @@
       <% if user_signed_in? %>
         <li>
           <%= link_to edit_user_registration_path do %>
-            <i class="fa fa-user fa-fw"></i> Settings
+            <i class="fa fa-gear fa-fw"></i> Settings
           <% end %>
         </li>
         <li class="divider"></li>
@@ -22,7 +22,7 @@
         <% end %>
         <li class="divider"></li>
         <%= link_to new_user_session_path do %>
-          <i class="fa fa-user fa-fw"></i> Sign In
+          <i class="fa fa-sign-in fa-fw"></i> Sign In
         <% end %>
       <% end %>
     </ul>
