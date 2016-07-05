@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :tournaments
   devise_for :users
   resources :decks, :only => [:new, :create, :show]
   root 'site#index'
