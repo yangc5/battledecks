@@ -16,11 +16,30 @@
   <div class="navbar-default sidebar" role="navigation">
     <div class="sidebar-nav navbar-collapse">
       <ul class="nav" id="side-menu">
-        <%#= render 'layouts/shared/navigation/search'%>
+
         <li>
           <%= link_to "Upload a Deck", new_deck_path %>
         </li>
-        <%#= render 'layouts/shared/navigation/main'%>
+
+        <li>
+          <a href="#"><i class="fa fa-gavel"></i> Tournaments<span class="fa arrow"></span></a>
+          <ul class="nav nav-second-level collapse" aria-expanded="false" style="height: 0px;">
+            <li>
+              <a href="#">Managing</a>
+            </li>
+            <li>
+              <%=link_to "Upcoming", tournaments_path%>
+            </li>
+            <li>
+              <a href="#">Competing</a>
+            </li>
+            <li>
+              <%= link_to "New Tournament", new_tournament_path%>
+            </li>
+          </li>
+        </ul>
+          <!-- /.nav-second-level -->
+        </li>
       </ul>
     </div>
     <!-- /.sidebar-collapse -->

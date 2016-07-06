@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :tournaments
   devise_for :users
   resources :decks, :only => [:new, :create, :show]
+  resources :tournaments, :only=>[:new, :create, :index, :show]
   root 'site#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
